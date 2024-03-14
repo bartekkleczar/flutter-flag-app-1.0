@@ -1,6 +1,10 @@
 import 'package:flagg/main_screen.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:hive_flutter/adapters.dart';
 
-void main(){
-  return runApp(MyApp());
+void main() async {
+  await Hive.initFlutter();
+  await Hive.openBox('mybox');
+
+  runApp(MyApp());
 }
