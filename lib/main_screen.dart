@@ -32,7 +32,9 @@ class _MyApp extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    print(db.filter(Flag('', [FlagColor.black], FlagLayout.vertical, true), db.flags));
+    /*for(var i in db.filter(Flag('', [FlagColor.black], FlagLayout.vertical, true), db.getFlags())){
+      print(i.name);
+    }*/
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(),

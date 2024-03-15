@@ -33,19 +33,17 @@ class FlaggDatabase{
     flags = _myBox.get('FLAGS');
   }
 
-  List filter(Flag data, List allFlags){
-    List filtered = [];
-    bool contains = true;
-    for (var i in allFlags){
-      for(var j in i.colors){
-        if (data.colors.contains(j)) {
-          print(j);
-          continue;
-        } else {
+  List<Flag> filter(Flag data, List<Flag> allFlags){
+    List<Flag> filtered = [];
+    for (var flag in allFlags){
+      bool contains = true;
+      for(var color in data.colors){
+        if (!flag.contains(color)) {
+          contains = false;
           break;
         }
       }
-      if(contains) filtered.add(i);
+      if(contains) filtered.add(flag);
     }
     return filtered;
   }
@@ -54,4 +52,13 @@ class FlaggDatabase{
     _myBox.put('FLAGS', flags);
   }
 
+  List<Flag> getFlags(){
+    List<Flag> output = [];
+
+    for(var i in flags){
+      output.add(i);
+    }
+
+    return output;
+  }
 }

@@ -1,11 +1,11 @@
-import 'enum_colors.dart';
-import 'enum_layout.dart';
+import 'package:flagg/data/flag/enum_colors.dart';
+import 'package:flagg/data/flag/enum_layout.dart';
 
 class Flag {
-  final String name; // ISO alpha-3
-  final List<FlagColor> colors;
-  final FlagLayout layout;
-  final bool anySigns;
+  String name; // ISO alpha-3
+  List<FlagColor> colors;
+  FlagLayout layout;
+  bool anySigns;
 
   Flag(
     this.name,
@@ -13,5 +13,14 @@ class Flag {
     this.layout,
     this.anySigns,
   );
+
+  bool contains(FlagColor color){
+    for(var i in colors){
+      if(i == color) {
+        return true;
+      }
+    }
+    return false;
+  }
 
 }
