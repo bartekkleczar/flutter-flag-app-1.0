@@ -33,6 +33,8 @@ class _ColorCheckboxState extends State<ColorCheckbox> {
   @override
   Widget build(BuildContext context) {
     return Checkbox(
+      checkColor: Colors.black,
+      activeColor: Colors.blueAccent,
       value: value,
       onChanged: (newValue) {
         setState(() {

@@ -18,14 +18,25 @@ class FilterColorOptionTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Text(text),
-        ColorCheckbox(
+    return Padding(
+      padding: const EdgeInsets.only(left: 25.0, right: 25.0),
+      child: Row(
+        mainAxisSize: MainAxisSize.max,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Text(
+              text,
+            style: const TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 15,
+            ),
+          ),
+          ColorCheckbox(
             color: color,
             list: list,
-        )
-      ],
+          )
+        ],
+      ),
     );
   }
 }

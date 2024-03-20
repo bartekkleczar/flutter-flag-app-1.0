@@ -1,8 +1,6 @@
-import 'package:flagg/data/flag/enum_colors.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../../../data/flag/enum_layout.dart';
 import '../../../data/flag/enum_signs.dart';
 import 'sign_checkbox.dart';
 
@@ -20,14 +18,25 @@ class FilterSignOptionTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Text(text),
-        SignCheckbox(
-          sign: sign,
-          list: list,
-        )
-      ],
+    return Padding(
+      padding: const EdgeInsets.only(left: 25.0, right: 25.0),
+      child: Row(
+        mainAxisSize: MainAxisSize.max,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Text(
+            text,
+            style: const TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 15,
+            ),
+          ),
+          SignCheckbox(
+            sign: sign,
+            list: list,
+          )
+        ],
+      ),
     );
   }
 }

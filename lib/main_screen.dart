@@ -23,6 +23,7 @@ class _MyApp extends State<MyApp> {
   final _myBox = Hive.box('mybox');
   FlaggDatabase db = FlaggDatabase();
   List<Flag> flagsFiltered = [];
+
   @override
   void initState() {
     if (_myBox.get('FLAGS') == null) {
@@ -38,14 +39,13 @@ class _MyApp extends State<MyApp> {
   List<FlagLayout> layoutList = [];
   List<FlagSign> signList = [];
 
-
   Flag prototype = Flag('', [], [], []);
 
-  void onSave(){
+  void onSave() {
     prototype.colors = colorList;
     prototype.layout = layoutList;
     prototype.signs = signList;
-    setState((){
+    setState(() {
       flagsFiltered = db.filterByColor(prototype, db.getFlags());
       flagsFiltered = db.filterByLayout(prototype, flagsFiltered);
       flagsFiltered = db.filterBySign(prototype, flagsFiltered);
@@ -90,7 +90,13 @@ class _MyApp extends State<MyApp> {
       home: Scaffold(
         backgroundColor: Colors.blueGrey.shade100,
         appBar: AppBar(
-          title: Text('Flagg Finder'),
+          title: const Text(
+            'Flagg Finder',
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 30,
+            ),
+          ),
           centerTitle: true,
           backgroundColor: Colors.blueAccent,
         ),

@@ -36,7 +36,7 @@ class DialogFilterSignBox extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
-      backgroundColor: Colors.blueAccent,
+      backgroundColor: Colors.blueGrey,
       content: Container(
         width: MediaQuery.of(context).size.width * 0.8,
         height: MediaQuery.of(context).size.height * 0.5,
@@ -56,9 +56,22 @@ class DialogFilterSignBox extends StatelessWidget {
                 },
               ),
             ),
-            MaterialButton(
-              onPressed: onSave,
-              child: const Text('Save'),
+            Padding(
+              padding: const EdgeInsets.only(top: 25.0),
+              child: MaterialButton(
+                onPressed: onSave,
+                color: Colors.blueAccent,
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(100.0)),
+                height: 40.0,
+                child: const Text(
+                  'Save',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                  ),
+                ),
+              ),
             )
           ],
         ),

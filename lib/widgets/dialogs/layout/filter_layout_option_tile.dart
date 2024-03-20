@@ -1,4 +1,3 @@
-import 'package:flagg/data/flag/enum_colors.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -19,14 +18,25 @@ class FilterLayoutOptionTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Text(text),
-        LayoutCheckbox(
-          layout: layout,
-          list: list,
-        )
-      ],
+    return Padding(
+      padding: const EdgeInsets.only(left: 25.0, right: 25.0),
+      child: Row(
+        mainAxisSize: MainAxisSize.max,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Text(
+            text,
+            style: const TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 15,
+            ),
+          ),
+          LayoutCheckbox(
+            layout: layout,
+            list: list,
+          )
+        ],
+      ),
     );
   }
 }
