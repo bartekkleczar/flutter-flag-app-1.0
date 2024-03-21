@@ -50,7 +50,7 @@ class DialogFilterColorBox extends StatelessWidget {
               style: const TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
             ),
             SizedBox(
-              height: MediaQuery.of(context).size.height * 0.38,
+              height: MediaQuery.of(context).size.height * 0.39,
               child: ListView.builder(
                 itemCount: colors.length,
                 itemBuilder: (context, index) {

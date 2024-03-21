@@ -133,11 +133,14 @@ class _MyApp extends State<MyApp> {
               ],
             ),
           ),
-          body: ListView.builder(
-            itemCount: flagsFiltered.length,
-            itemBuilder: (context, index) {
-              return FlagTile(flag: flagsFiltered[index]);
-            },
+          body: Padding(
+            padding: const EdgeInsets.only(bottom: 80.0),
+            child: ListView.builder(
+              itemCount: flagsFiltered.length,
+              itemBuilder: (context, index) {
+                return FlagTile(flag: flagsFiltered[index]);
+              },
+            ),
           ),
         ),
       ),
