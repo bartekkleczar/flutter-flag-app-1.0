@@ -1,5 +1,6 @@
 import 'package:flagg/data/flag/enum_colors.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_translate/flutter_translate.dart';
 
 import 'filter_color_option_tile.dart';
 
@@ -41,10 +42,15 @@ class DialogFilterColorBox extends StatelessWidget {
         width: MediaQuery.of(context).size.width * 0.8,
         height: MediaQuery.of(context).size.height * 0.5,
         child: Column(
-          mainAxisSize: MainAxisSize.min,
+          mainAxisSize: MainAxisSize.max,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
+            Text(
+              translate("filters.colors.name"),
+              style: const TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+            ),
             SizedBox(
-              height: MediaQuery.of(context).size.height * 0.4,
+              height: MediaQuery.of(context).size.height * 0.38,
               child: ListView.builder(
                 itemCount: colors.length,
                 itemBuilder: (context, index) {
@@ -57,16 +63,16 @@ class DialogFilterColorBox extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(top: 25.0),
+              padding: const EdgeInsets.only(top: 0),
               child: MaterialButton(
                 onPressed: onSave,
                 color: Colors.blueAccent,
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(100.0)),
                 height: 40.0,
-                child: const Text(
-                  'Save',
-                  style: TextStyle(
+                child: Text(
+                  translate('ui.Save'),
+                  style: const TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 20,
                   ),

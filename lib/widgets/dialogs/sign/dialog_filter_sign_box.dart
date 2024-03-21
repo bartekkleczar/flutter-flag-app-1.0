@@ -1,11 +1,7 @@
-import 'dart:ffi';
-
-import 'package:flagg/data/flag/enum_colors.dart';
-import 'package:flagg/data/flag/enum_layout.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_translate/flutter_translate.dart';
 
 import '../../../data/flag/enum_signs.dart';
-import '../color/filter_color_option_tile.dart';
 import 'filter_sign_option_tile.dart';
 
 class DialogFilterSignBox extends StatelessWidget {
@@ -32,7 +28,7 @@ class DialogFilterSignBox extends StatelessWidget {
     "circle",
     "crescent",
   ];
-  
+
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
@@ -42,9 +38,14 @@ class DialogFilterSignBox extends StatelessWidget {
         height: MediaQuery.of(context).size.height * 0.5,
         child: Column(
           mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
+            Text(
+                translate("filters.signs.name"),
+              style: const TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+            ),
             SizedBox(
-              height: MediaQuery.of(context).size.height * 0.4,
+              height: MediaQuery.of(context).size.height * 0.3,
               child: ListView.builder(
                 itemCount: sign.length,
                 itemBuilder: (context, index) {
@@ -57,16 +58,16 @@ class DialogFilterSignBox extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(top: 25.0),
+              padding: const EdgeInsets.only(top: 0),
               child: MaterialButton(
                 onPressed: onSave,
                 color: Colors.blueAccent,
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(100.0)),
                 height: 40.0,
-                child: const Text(
-                  'Save',
-                  style: TextStyle(
+                child: Text(
+                  translate('ui.Save'),
+                  style: const TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 20,
                   ),
@@ -79,4 +80,3 @@ class DialogFilterSignBox extends StatelessWidget {
     );
   }
 }
-

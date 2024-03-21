@@ -1,0 +1,40 @@
+{
+  "ui": {
+    "Title": "Flago Szukacz",
+    "Save": "Zapisz"
+  },
+
+  "filters": {
+    "layouts": {
+      "name": "Ułożenie",
+      "horizontal": "Poziome",
+      "vertical": "Pionowe",
+      "middle": "Środkowe",
+      "diagonal": "Przekątne"
+    },
+    "colors": {
+      "name": "Kolory",
+      "red": "Czerwony",
+      "green": "Zielony",
+      "blue": "Niebieski",
+      "black": "Czarny",
+      "white": "Biały",
+      "yellow": "Żółty",
+      "orange": "Pomarańczowy"
+    },
+    "signs": {
+      "name": "Symbole",
+      "none": "Brak",
+      "other": "Inne",
+      "bird": "Ptak",
+      "circle": "Koło",
+      "crescent": "Półksiężyc"
+    }
+  },
+
+  "countries": {
+    "AFG": "Afganistan",
+    "ALB": "Albania",
+    "DZA": "Algieria"
+  }
+}

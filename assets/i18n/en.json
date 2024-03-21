@@ -1,0 +1,41 @@
+{
+  "ui": {
+    "Title": "Flagg Finder",
+    "Save": "Save"
+  },
+
+  "filters": {
+    "layouts": {
+      "name": "Layout",
+      "horizontal": "horizontal",
+      "vertical": "vertical",
+      "middle": "middle",
+      "diagonal": "diagonal"
+    },
+    "colors": {
+      "name": "Colors",
+      "red": "Red",
+      "green": "Green",
+      "blue": "Blue",
+      "black": "Black",
+      "white": "White",
+      "yellow": "Yellow",
+      "orange": "Orange"
+    },
+    "signs": {
+      "name": "Signs",
+      "none": "None",
+      "other": "Other",
+      "bird": "Bird",
+      "circle": "Circle",
+      "crescent": "Crescent"
+    }
+  },
+
+  "countries": {
+    "AFG": "Afghanistan",
+    "ALB": "Albania",
+    "DZA": "Algeria"
+  }
+
+}

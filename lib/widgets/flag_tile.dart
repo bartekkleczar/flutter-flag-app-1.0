@@ -1,5 +1,6 @@
 import 'package:flagg/data/flag/flag.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_translate/flutter_translate.dart';
 
 class FlagTile extends StatelessWidget {
   final Flag flag;
@@ -22,7 +23,7 @@ class FlagTile extends StatelessWidget {
             height: 100,
           ),
           Text(
-            flag.name,
+            translate("countries.${flag.name}"),
             style: const TextStyle(
               fontWeight: FontWeight.bold,
               fontSize: 25.0,
